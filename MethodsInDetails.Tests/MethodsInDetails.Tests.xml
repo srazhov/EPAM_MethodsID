@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MethodsInDetails.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:MethodsInDetails.Tests.MethodsInDetailsTest">
+            <summary>
+            Test class of MethodsInDetails
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.Tests.MethodsInDetailsTest.GetIEEE754_GetsDoubleObject_ReturnsInFormat_IEEE754_InString(System.Double)">
+            <summary>
+            Test of GetIEEE754
+            </summary>
+            <param name="dubObject">Double to check</param>
+            <returns>String representation of double</returns>
+        </member>
+        <member name="M:MethodsInDetails.Tests.MethodsInDetailsTest.IsNull_GetString_ReturnTrueIfNull(System.String)">
+            <summary>
+            Test of IsNull()
+            </summary>
+            <param name="input">Strings to check</param>
+            <returns>True if input is Null</returns>
+        </member>
+        <member name="M:MethodsInDetails.Tests.MethodsInDetailsTest.IsNull_NullInt_ReturnTrue">
+            <summary>
+            Test of IsNull()
+            </summary>
+        </member>
+    </members>
+</doc>

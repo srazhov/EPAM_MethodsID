@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MethodsInDetails</name>
+    </assembly>
+    <members>
+        <member name="T:MethodsInDetails.MethodsInDetails">
+            <summary>
+            NET-01.
+            9. Methods In Details
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.MethodsInDetails.GetIEEE754(System.Double)">
+            <summary>
+            Turns double object to IEEE754 binary representation
+            </summary>
+            <param name="dub">This object</param>
+            <returns>Return IEEE754 format of double in string</returns>
+        </member>
+        <member name="M:MethodsInDetails.MethodsInDetails.IsNull(System.Object)">
+            <summary>
+            Checks object if it does not have a Value
+            </summary>
+            <param name="nullable">This object</param>
+            <returns>Is object is null</returns>
+        </member>
+    </members>
+</doc>
