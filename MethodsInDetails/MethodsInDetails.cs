@@ -24,73 +24,80 @@ namespace MethodsInDetails
         public static string GetIEEE754(this double dub)
         {
             // Sign
-            int sign = (int)(((ulong)dub >> 63) & 1);
+            int sign = double.IsNegative(dub) ? 1 : 0;
+            dub = double.IsNegative(dub) ? dub * -1 : dub;
 
             // Finding an exponent
-            string exp = intToBit(Math.Abs((int)dub));
-            string exponent = intToBit(1023 - (-exp.Length + 1));
+            string exp = "0";
+            if (!double.IsInfinity(dub) && !double.IsNaN(dub))
+            {
+                exp = intToBit(Math.Truncate(dub));
+            }
+
+            int expValue = double.IsInfinity(dub) || double.IsNaN(dub) ? 2047 : 1023 - (-exp.Length + 1);
+            if (exp.Length > 52)
+            {
+                exp = exp.Remove(52);
+            }
+
+            string exponent = intToBit(expValue);
+            if (exp == string.Empty)
+            {
+                exponent = "0";
+                exp = "0";
+            }
+
             exponent = new string('0', 11 - exponent.Length) + exponent;
 
             // Finding a mantissa
-            string fraction = calculateFraction(Math.Abs(dub - Math.Truncate(dub)), new List<double>(), out int diff);
-            string mantissa = exp == string.Empty ? fraction : exp.Substring(1) + fraction;
-            while (mantissa.Length < 52)
+            double test = Math.Abs(dub - Math.Truncate(dub));
+            string fraction = calculateFraction(Math.Abs(dub - Math.Truncate(dub)), exp.Length);
+            string mantissa = exp;
+            if (exp.Length < 52)
             {
-                // Fill mantissa output with repeating digits if it doesn't have enough digits
-                mantissa += fraction.Remove(0, diff + 1);
-            }
-
-            if (mantissa.Length > 52)
-            {
-                mantissa = mantissa.Remove(52);
+                mantissa = exp.Substring(1) + fraction;
             }
 
             return sign.ToString() + exponent + mantissa;
 
-            string intToBit(int intObject)
+            string intToBit(double dubObj)
             {
                 List<int> toOutPut = new List<int>();
 
-                int degree = 0;
-                while (intObject != 0)
+                while (dubObj != 0)
                 {
-                    int temp = (int)Math.Pow(2, degree);
-                    if ((intObject & temp) == temp)
+                    dubObj = Math.Truncate(dubObj);
+                    if (dubObj == 1)
                     {
-                        intObject -= intObject & temp;
                         toOutPut.Add(1);
-                    }
-                    else
-                    {
-                        toOutPut.Add(0);
+                        break;
                     }
 
-                    degree++;
+                    toOutPut.Add((int)Math.Truncate(dubObj % 2));
+                    dubObj /= 2;
                 }
 
                 toOutPut.Reverse();
-                string testResult = string.Join(string.Empty, toOutPut);
-                return testResult;
+                return string.Join(string.Empty, toOutPut);
             }
             
-            string calculateFraction(double value, List<double> values, out int startsDifference)
+            string calculateFraction(double value, int max)
             {
                 value *= 2;
-                int result = 0;
+                string result = "0";
                 if (value >= 1.0d)
                 {
                     value--;
-                    result = 1;
+                    result = "1";
                 }
 
-                if (values.Contains(value))
+                if (max >= 52)
                 {
-                    startsDifference = values.IndexOf(value);
-                    return result.ToString();
+                    return result;
                 }
 
-                values.Add(value);
-                return result + calculateFraction(value, values, out startsDifference);
+                max++;
+                return result + calculateFraction(value, max);
             }
         }
 
