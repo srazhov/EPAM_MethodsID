@@ -4,6 +4,66 @@
         <name>MethodsInDetails</name>
     </assembly>
     <members>
+        <member name="T:MethodsInDetails.Euclidea">
+            <summary>
+            Class that holds various realizations of Euclidean algorithm 
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.#ctor(System.Int32[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:MethodsInDetails.Euclidea"/> class
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Numbers' length must not be less than 2</exception>
+            <param name="numbers">Numbers to find GCD</param>
+        </member>
+        <member name="P:MethodsInDetails.Euclidea.Numbers">
+            <summary>
+            Gets numbers to look for
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.EuclideanAlgorithm(System.Int32[])">
+            <summary>
+            Find the GCD from the given numbers
+            by using Euclidean algorithm
+            </summary>
+            <param name="numbers">Numbers to look for</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Numbers' length must not be less than 2</exception>
+            <returns>The Greatest Common Divisor (GCD)</returns>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.SteinsAlgorithm(System.Int32[])">
+            <summary>
+            Find the GCD from the given numbers
+            by using Steins algorithm
+            </summary>
+            <param name="numbers">Numbers to look for</param>
+            <returns>The Greatest Common Divisor (GCD)</returns>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.EuclideanAlgorithm">
+            <summary>
+            Find the GCD from the given numbers
+            by using Euclidean algorithm
+            </summary>
+            <returns>The Greatest Common Divisor (GCD)</returns>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.SteinsAlgorithm">
+            <summary>
+            Find the GCD from the given numbers
+            by using Steins algorithm
+            </summary>
+            <returns>The Greatest Common Divisor (GCD)</returns>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.GetRequiredTimeForExecutionEuclid">
+            <summary>
+            Finds the amount of time required to execute <see cref="M:MethodsInDetails.Euclidea.EuclideanAlgorithm"/> method
+            </summary>
+            <returns>Time required to execute</returns>
+        </member>
+        <member name="M:MethodsInDetails.Euclidea.GetRequiredTimeForExecutionStein">
+            <summary>
+            Finds the amount of time required to execute <see cref="M:MethodsInDetails.Euclidea.SteinsAlgorithm"/> method
+            </summary>
+            <returns>Time required to execute</returns>
+        </member>
         <member name="T:MethodsInDetails.MethodsInDetails">
             <summary>
             NET-01.
@@ -23,6 +83,28 @@
             </summary>
             <param name="nullable">This object</param>
             <returns>Is object is null</returns>
+        </member>
+        <member name="M:MethodsInDetails.MethodsInDetails.DoubleToBit(System.Double)">
+            <summary>
+            Converts double value to its Base2 interpretation
+            </summary>
+            <param name="dubObj">This double object</param>
+            <returns>Base2 code in string</returns>
+        </member>
+        <member name="M:MethodsInDetails.MethodsInDetails.DenormalToBit(System.Double)">
+            <summary>
+            Finds Mantissa from a given subnormal value
+            </summary>
+            <param name="dubObj">This double object</param>
+            <returns>Mantissa in string</returns>
+        </member>
+        <member name="M:MethodsInDetails.MethodsInDetails.CalculateFraction(System.Double,System.Int32)">
+            <summary>
+            Finds non-subnormal values' Fraction
+            </summary>
+            <param name="value">This double object</param>
+            <param name="start">Start from</param>
+            <returns>Mantissa of the given value</returns>
         </member>
     </members>
 </doc>

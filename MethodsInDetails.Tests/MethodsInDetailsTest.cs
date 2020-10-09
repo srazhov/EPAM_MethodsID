@@ -10,7 +10,7 @@ namespace MethodsInDetails.Tests
     using NUnit.Framework;
 
     /// <summary>
-    /// Test class of MethodsInDetails
+    /// Test class of the <see cref="MethodsInDetails"/> class methods
     /// </summary>
     [TestFixture]
     public class MethodsInDetailsTest
@@ -26,6 +26,9 @@ namespace MethodsInDetails.Tests
         [TestCase(double.MinValue, ExpectedResult = "1111111111101111111111111111111111111111111111111111111111111111")]
         [TestCase(double.MaxValue, ExpectedResult = "0111111111101111111111111111111111111111111111111111111111111111")]
         [TestCase(double.Epsilon, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000001")]
+        [TestCase(3.4919828115750104960471871783E-310, ExpectedResult = "0000000000000000010000000100100000100000000001000000010100000110")]
+        [TestCase(double.Epsilon + double.Epsilon, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000010")]
+        [TestCase(double.Epsilon * 5, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000101")]
         [TestCase(double.NaN, ExpectedResult = "1111111111111000000000000000000000000000000000000000000000000000")]
         [TestCase(double.NegativeInfinity, ExpectedResult = "1111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]

@@ -4,9 +4,43 @@
         <name>MethodsInDetails.Tests</name>
     </assembly>
     <members>
+        <member name="T:MethodsInDetails.Tests.EuclideaTest">
+            <summary>
+            Test class of the <see cref="T:MethodsInDetails.Euclidea"/> class methods
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.Tests.EuclideaTest.EuclideanAlgorithm_GetsTwoOrMoreValues_ReturnsGCD(System.Int32[])">
+            <summary>
+            Test method of the <see cref="M:MethodsInDetails.Euclidea.EuclideanAlgorithm(System.Int32[])"/> method
+            </summary>
+            <param name="cases">Given cases</param>
+            <returns>The Greatest Common Divisor</returns>
+        </member>
+        <member name="M:MethodsInDetails.Tests.EuclideaTest.EuclideanAlgorithm_GetsPowOf4and8_Returns5">
+            <summary>
+            Test method of the <see cref="M:MethodsInDetails.Euclidea.EuclideanAlgorithm(System.Int32[])"/>
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.Tests.EuclideaTest.SteinsAlgorithm_GetsTwoOrMoreValues_ReturnsGCD(System.Int32[])">
+            <summary>
+            Test method of the <see cref="M:MethodsInDetails.Euclidea.SteinsAlgorithm(System.Int32[])"/> method
+            </summary>
+            <param name="cases">Given cases</param>
+            <returns>The Greatest Common Divisor</returns>
+        </member>
+        <member name="M:MethodsInDetails.Tests.EuclideaTest.SteinsAlgorithm_GetsPowOf4and8_Returns5">
+            <summary>
+            Test method of the <see cref="M:MethodsInDetails.Euclidea.SteinsAlgorithm(System.Int32[])"/> method
+            </summary>
+        </member>
+        <member name="M:MethodsInDetails.Tests.EuclideaTest.TestTimeCheckerEuclid">
+            <summary>
+            Test method of the <see cref="M:MethodsInDetails.Euclidea.GetRequiredTimeForExecutionEuclid"/>
+            </summary>
+        </member>
         <member name="T:MethodsInDetails.Tests.MethodsInDetailsTest">
             <summary>
-            Test class of MethodsInDetails
+            Test class of the <see cref="T:MethodsInDetails.MethodsInDetails"/> class methods
             </summary>
         </member>
         <member name="M:MethodsInDetails.Tests.MethodsInDetailsTest.GetIEEE754_GetsDoubleObject_ReturnsInFormat_IEEE754_InString(System.Double)">
